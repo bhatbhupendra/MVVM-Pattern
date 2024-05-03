@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMPattern.MVVM.Views.ConvertersView"
+             xmlns:converters="clr-namespace:MVVMPattern.MVVM.Converters"
+             Title="ConvertersView">
+    <ContentPage.Resources>
+        <converters:BoolConverter x:Key="boolConverter"/>
+    </ContentPage.Resources>
+
+    <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <CheckBox 
+            IsChecked="{Binding Data.Married, Converter={StaticResource boolConverter}}" />
+        <Label Text="Married?" />
+    </HorizontalStackLayout>
+</ContentPage>
